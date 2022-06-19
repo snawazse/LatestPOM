@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import com.qa.rego.Utils.Constants;
 import com.qa.rego.Utils.ElementUtil;
 
-public class AccountsPage {
+public class DashboardPage {
 	
 	private WebDriver driver;
 	private ElementUtil eleUtil;
@@ -20,7 +20,7 @@ public class AccountsPage {
 	private By header = By.cssSelector("div#logo a");
 	private By accSecList = By.cssSelector("div#content h2");
 	
-	public AccountsPage(WebDriver driver) {
+	public DashboardPage(WebDriver driver) {
 		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
 	}

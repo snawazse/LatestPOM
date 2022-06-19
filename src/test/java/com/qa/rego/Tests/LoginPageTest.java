@@ -2,6 +2,7 @@ package com.qa.rego.Tests;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.rego.Base.BaseTest;
@@ -50,7 +51,7 @@ public class LoginPageTest extends BaseTest{
 	@Test
 	@Description("checking label count on login page.....")
 	@Severity(SeverityLevel.NORMAL)
-	public void labelCount() {
+	public void getLabelCount() {
 		System.out.println(loginPage.getLabelCount());
 	}
 
@@ -58,9 +59,10 @@ public class LoginPageTest extends BaseTest{
 	@Test
 	@Description("get all labels name on login page.....")
 	@Severity(SeverityLevel.NORMAL)
-	public void labelAllLabelName() {
+	public void getAllLabelName() {
 		System.out.println(loginPage.getAllLabelsName());
 	}
+
 	@Test
 	@Description("login Page logo Test.....")
 	@Severity(SeverityLevel.NORMAL)
@@ -84,5 +86,9 @@ public class LoginPageTest extends BaseTest{
 //		Assert.assertTrue(loginPage.isRegisterLinkExist());
 //	}
 //
+
+
+
+
 
 }

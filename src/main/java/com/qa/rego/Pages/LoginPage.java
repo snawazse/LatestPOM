@@ -65,11 +65,11 @@ public class LoginPage {
 	}
 
 	@Step("login to application with correct username {0} and password {1}")
-	public AccountsPage doLogin(String un, String pwd) {
+	public DashboardPage doLogin(String un, String pwd) {
 		eleutil.waitForElementToBeVisible(emailId, Constants.DEFAULT_TIME_OUT).sendKeys(un);
 		eleutil.doSendKeys(password, pwd);
 		eleutil.doClick(loginBtn);
-		return new AccountsPage(driver);
+		return new DashboardPage(driver);
 	}
 	
 	@Step("login to application with correct username {0} and password {1}")
@@ -86,12 +86,25 @@ public class LoginPage {
 			}
 			return false;
 	}
-	
-	
+
 	@Step("checking that register link is exist or not.....")
 	public boolean isRegisterLinkExist() {
 		return eleutil.waitForElementToBeVisible(registerLink, Constants.DEFAULT_TIME_OUT).isDisplayed();
 
+	}
+
+	@Step("navigating to register page.....")
+	public LoginPage navigateToForgotPassword() {
+		if(isForgotPwdLinkExist()) {
+			eleutil.doClick(forgotPwd);
+			return new LoginPage(driver);
+		}
+		return null;
+	}
+
+	@Step("getting login url title.....")
+	public String getForgotPassPageUrl() {
+		return eleutil.waitForUrl(Constants.DEFAULT_TIME_OUT, Constants.FORGOT_PASS_PAGE_FRACTION_URL);
 	}
 	
 	@Step("navigating to register page.....")

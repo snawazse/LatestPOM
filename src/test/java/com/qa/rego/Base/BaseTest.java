@@ -1,43 +1,15 @@
 package com.qa.rego.Base;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.PrintStream;
-import java.net.URL;
-import java.nio.ByteBuffer;
-import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.Properties;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.HttpMethod;
-import com.amazonaws.auth.profile.ProfileCredentialsProvider;
-import com.amazonaws.regions.Regions;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
-import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
-import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
-import com.amazonaws.services.simpleemail.model.RawMessage;
-import com.amazonaws.services.simpleemail.model.SendRawEmailRequest;
 import com.qa.rego.Factory.DriverFactory;
-import com.qa.rego.Pages.AccountsPage;
+import com.qa.rego.Pages.DashboardPage;
 import com.qa.rego.Pages.LoginPage;
 import com.qa.rego.Pages.ProductInfoPage;
 import com.qa.rego.Pages.RegistrationPage;
@@ -45,17 +17,16 @@ import com.qa.rego.Pages.SearchResultsPage;
 
 public class BaseTest {
 	
-	/*private static String SENDER = "naveenanimation20@gmail.com";
-	private static String RECIPIENT = "naveenanimation20@gmail.com";
-	private static String SUBJECT = "Test Execution Report " + LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
-	private static String BODY_TEXT = "Please click on this latest Test Execution Report link:";
-*/
+//	private static String SENDER = "snawazse@gmail.com";
+//	private static String RECIPIENT = "snawazse@gmail.com";
+//	private static String SUBJECT = "Test Execution Report " + LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
+//	private static String BODY_TEXT = "Please click on this latest Test Execution Report link:";
 
 	public DriverFactory df;
 	public Properties prop;
 	public WebDriver driver;
 	public LoginPage loginPage;
-	public AccountsPage accPage;
+	public DashboardPage dashboardPage;
 	public SearchResultsPage searchResultsPage;
 	public ProductInfoPage productInfoPage;
 	public RegistrationPage registrationPage;
@@ -83,7 +54,8 @@ public class BaseTest {
 		driver.quit();
 	}
 	
-	/*@AfterSuite
+/*
+	@AfterSuite
 	public void sendTestNGReports() {
 
 		// Pass the name of the S3 bucket
@@ -151,6 +123,7 @@ public class BaseTest {
 		    System.err.println("Error message: " + ex.getMessage());
 		    ex.printStackTrace();
 		}
-	}*/
+	}
+*/
 
 }

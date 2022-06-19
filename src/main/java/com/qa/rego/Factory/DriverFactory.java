@@ -35,13 +35,7 @@ public class DriverFactory {
 
 	public static final Logger log = Logger.getLogger(DriverFactory.class);
 
-	/**
-	 * This method is used to initialize the webdriver on the basis of given browser
-	 * name. This method will take care of local and remote execution
-	 * 
-	 * @param browserName
-	 * @return
-	 */
+
 	public WebDriver init_driver(Properties prop) {
 
 		String browserName = prop.getProperty("browser").trim();
@@ -79,7 +73,7 @@ public class DriverFactory {
 		}
 
 		getDriver().manage().deleteAllCookies();
-		getDriver().manage().window().fullscreen();
+		getDriver().manage().window().maximize();
 		getDriver().get(prop.getProperty("url"));
 		log.info(prop.getProperty("url") + " .... url is launched....");
 

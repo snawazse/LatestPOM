@@ -21,13 +21,20 @@
 			<class name="com.qa.rego.Tests.LoginPageTest" />
 		</classes>
 	</test>
+	<test name="Forgot Password Page Test _ chrome_91">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="91.0" />
+		<classes>
+			<class name="com.qa.rego.Tests.ForgotPassPage" />
+		</classes>
+	</test>
 
 <!--
 	 <test name="Open Cart Accounts Page Test_chrome_90">
 		<parameter name="browser" value="chrome" />
 		<parameter name="browserversion" value="90.0" />
 		<classes>
-			<class name="com.qa.rego.Tests.AccountsPageTest" />
+			<class name="com.qa.rego.Tests.DashboardPageTest" />
 		</classes>
 	</test> 
 	-->
@@ -36,7 +43,7 @@
 		<parameter name="browser" value="chrome" />
 		<parameter name="browserversion" value="89.0" />
 		<classes>
-			<class name="com.qa.rego.Tests.AccountsPageTest" />
+			<class name="com.qa.rego.Tests.DashboardPageTest" />
 		</classes>
 	</test> 
 -->
